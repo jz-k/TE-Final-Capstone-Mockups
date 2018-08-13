@@ -1,0 +1,153 @@
+/* The container for all elements on child dashboard page */
+.child-dash {
+    width: 60%;
+    margin: 3% auto;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-family: 'Indie Flower', cursive;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "greeting     greeting    time-remaining      time-remaining"
+      "play         play        closet              closet"
+      "buy          buy         coin                coin";
+
+    /* setting background-color:black allows borders around grid
+    elements... comment out background-color or set to white to define
+    own borders */
+    background-color: black;
+    align-items: stretch;
+    grid-gap: 5px;
+}
+
+/* The "hello, child" greeting of child dashboard */
+.greeting {
+    background-color: white;
+    border-top-left-radius: 10px;
+    grid-area: greeting;
+    font-size: 4vw;
+    margin: 0;
+    padding: 2% 10%;
+    display: flex;
+    text-align: left;
+}
+
+/* The box containing the screen time remaining on child dashboard */
+.time-remaining-container {
+    grid-area: time-remaining;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 10px;
+}
+
+/* The "time remaining:" text that prefaces the time remaining */
+.time-remaining-declaration {
+    width: 100%;
+    font-size: 2vw;
+}
+
+.time-remaining {
+    font-size: 3vw;
+    
+}
+
+.play {
+    grid-area: play;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2% 0%;
+    width: 100%;
+    height: 10em;
+    background-color: white;
+}
+
+.closet {
+    grid-area: closet;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2% 0%;
+    width: 100%;
+    height: 10em;
+    background-color: white;
+}
+
+.buy {
+    grid-area: buy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2% 0%;
+    width: 100%;
+    height: 10em;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+}
+
+.coin {
+    grid-area: coin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2% 0%;
+    width: 100%;
+    height: 10em;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+}
+
+.coins-remaining {
+    font-size: 1.5vw;
+}
+
+.child-selection {
+    width: 90%;
+    height: 90%;
+    color: rgba(0,0,0,.8);
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5vw;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgba(0,0,0,.1);
+    padding: 2%;
+    transition: .1s;
+} 
+
+.child-selection:hover {
+    background-color: rgba(0,0,0,.2);
+}
+
+/* Break the animation into separate class using JavaScript, so that
+it is forced to finish once a button is selected */
+.child-selection:active{
+    font-size: 1.9vw;
+    background-color: rgba(0,0,0,.3);
+    animation: criss-cross .6s;
+}
+
+@keyframes criss-cross {
+    0% {
+        transform: rotateZ(0deg)
+    }
+    33.3% {
+        transform: rotateZ(30deg)
+    }
+    66.6% {
+        transform: rotateZ(-30deg)
+    }
+    99.9% {
+        transform: rotateZ(0deg);
+    }
+}
